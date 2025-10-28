@@ -1,0 +1,145 @@
+DLS2#show vtp status
+VTP Version                     : 2
+Configuration Revision          : 5
+Maximum VLANs supported locally : 255
+Number of existing VLANs        : 7
+VTP Operating Mode              : Server
+VTP Domain Name                 : SWITCH
+VTP Pruning Mode                : Disabled
+VTP V2 Mode                     : Enabled
+VTP Traps Generation            : Disabled
+MD5 digest                      : 0x2C 0xA2 0x4E 0x7A 0x3E 0x40 0x7E 0x71 
+Configuration last modified by 0.0.0.0 at 3-1-93 00:18:50
+Local updater ID is 0.0.0.0 (no valid interface found)
+DLS2#show interfaces trunk
+Port        Mode         Encapsulation  Status        Native vlan
+Fa0/1       on           802.1q         trunking      1
+Fa1/1       on           802.1q         trunking      1
+Fa2/1       on           802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Fa0/1       1-1005
+Fa1/1       1-1005
+Fa2/1       1-1005
+
+Port        Vlans allowed and active in management domain
+Fa0/1       1,100,200
+Fa1/1       1,100,200
+Fa2/1       1,100,200
+
+Port        Vlans in spanning tree forwarding state and not pruned
+Fa0/1       1,100,200
+Fa1/1       1,100,200
+Fa2/1       1,100,200
+
+DLS2#show spanning-tree
+VLAN0001
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    32769
+             Address     0001.424D.4C25
+             Cost        19
+             Port        3(FastEthernet2/1)
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)
+             Address     0001.967C.888A
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Fa1/1            Desg FWD 19        128.2    P2p
+Fa2/1            Root FWD 19        128.3    P2p
+Fa0/1            Desg FWD 19        128.1    P2p
+
+VLAN0100
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    32868
+             Address     0001.424D.4C25
+             Cost        19
+             Port        3(FastEthernet2/1)
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32868  (priority 32768 sys-id-ext 100)
+
+DLS2#how vlan brief
+         ^
+% Invalid input detected at '^' marker.
+	
+DLS2#show vtp status
+VTP Version                     : 2
+Configuration Revision          : 5
+Maximum VLANs supported locally : 255
+Number of existing VLANs        : 7
+VTP Operating Mode              : Server
+VTP Domain Name                 : SWITCH
+VTP Pruning Mode                : Disabled
+VTP V2 Mode                     : Enabled
+VTP Traps Generation            : Disabled
+MD5 digest                      : 0x2C 0xA2 0x4E 0x7A 0x3E 0x40 0x7E 0x71 
+Configuration last modified by 0.0.0.0 at 3-1-93 00:18:50
+Local updater ID is 0.0.0.0 (no valid interface found)
+DLS2#
+DLS2#show interfaces trunk
+Port        Mode         Encapsulation  Status        Native vlan
+Fa0/1       on           802.1q         trunking      1
+Fa1/1       on           802.1q         trunking      1
+Fa2/1       on           802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Fa0/1       1-1005
+Fa1/1       1-1005
+Fa2/1       1-1005
+
+Port        Vlans allowed and active in management domain
+Fa0/1       1,100,200
+Fa1/1       1,100,200
+Fa2/1       1,100,200
+
+Port        Vlans in spanning tree forwarding state and not pruned
+Fa0/1       1,100,200
+Fa1/1       1,100,200
+Fa2/1       1,100,200
+
+DLS2#
+DLS2#show spanning-tree
+VLAN0001
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    32769
+             Address     0001.424D.4C25
+             Cost        19
+             Port        3(FastEthernet2/1)
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)
+             Address     0001.967C.888A
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Fa1/1            Desg FWD 19        128.2    P2p
+Fa2/1            Root FWD 19        128.3    P2p
+Fa0/1            Desg FWD 19        128.1    P2p
+
+VLAN0100
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    32868
+             Address     0001.424D.4C25
+             Cost        19
+             Port        3(FastEthernet2/1)
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32868  (priority 32768 sys-id-ext 100)
+
+DLS2#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa3/1, Fa4/1, Fa5/1
+100  USER-VLAN                        active    
+200  FILE-VLAN                        active    
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
